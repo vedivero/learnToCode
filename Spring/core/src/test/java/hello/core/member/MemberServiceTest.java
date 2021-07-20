@@ -9,26 +9,24 @@ public class MemberServiceTest {
 
     MemberService memberService;
 
-
-    //Test를 실행 전 무조건 실행되도록 하는 동작
     @BeforeEach
-    public void beforEach() {
+    public void beforeEach() {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
     }
 
     @Test
     void join() {
-        //given
-        Member member = new Member(1L,"memberA",Grade.VIP);
 
-        //when
+        //given - 어떤 게 주어졌을 때
+        Member member = new Member(1L, "memberA", Grade.VIP);
+
+        //when - 이렇게 했을 때
         memberService.join(member);
         Member findMember = memberService.findMember(1L);
 
-        //then
+        //then - 이렇게 된다. -검증하는 곳
         Assertions.assertThat(member).isEqualTo(findMember);
 
     }
-
 }

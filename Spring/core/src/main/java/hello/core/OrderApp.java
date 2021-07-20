@@ -12,6 +12,9 @@ public class OrderApp {
 
     public static void main(String[] args) {
 
+        //MemberService memberService = new MemberServiceImpl(null);
+        //OrderService orderService = new OrderServiceImpl(null,null);
+
         AppConfig appConfig = new AppConfig();
         MemberService memberService = appConfig.memberService();
         OrderService orderService = appConfig.orderService();
@@ -22,9 +25,7 @@ public class OrderApp {
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);
 
-        System.out.println("order = "+order);
-        System.out.println("order.calculatePrice = " + order.calculatePrice());
-
+        System.out.println("order = " + order);
+        System.out.println("order = " + order.calculatePrice());
     }
-
 }

@@ -7,17 +7,16 @@ import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 
-//App전체를 설정하고 구성하는 페이지
+//Application전체는 설정하고 구성하는 Class
 public class AppConfig {
 
+    //생성자 주입-Injection
     public MemberService memberService() {
-        return new MemberServiceImpl(
-                new MemoryMemberRepository());
+        return new MemberServiceImpl(new MemoryMemberRepository());
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(
-                new MemoryMemberRepository(), new FixDiscountPolicy());
+        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
     }
 
 }

@@ -14,7 +14,7 @@ public class OrderServiceTest {
     OrderService orderService;
 
     @BeforeEach
-    public void beforEach() {
+    public void beforeEach() {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
         orderService = appConfig.orderService();
@@ -28,5 +28,6 @@ public class OrderServiceTest {
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+
     }
 }

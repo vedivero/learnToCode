@@ -2,6 +2,7 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService{
 
+    //가입을 하고 회원을 찾으려면 MemberRepository가 필요
     private final MemberRepository memberRepository;
 
     public MemberServiceImpl(MemberRepository memberRepository) {
@@ -9,13 +10,12 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public void join(Member member) {
+    public void join(Member member){
         memberRepository.save(member);
     }
 
     @Override
-    public Member findMember(Long memberId) {
+    public Member findMember(Long memberId){
         return memberRepository.findById(memberId);
     }
-
 }

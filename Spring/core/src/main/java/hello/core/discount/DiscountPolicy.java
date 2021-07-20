@@ -4,12 +4,8 @@ import hello.core.member.Member;
 
 public interface DiscountPolicy {
 
-    /**
-     * @return 할인 대상 금액
-     */
-
-    int discount(Member member, int price);
-
+    // 000원이 할인 됐다는 것을 return
+    int discount(Member member,int price);
 
 
 }
