@@ -1,1 +1,1 @@
-공부하며 성장하는 흔적이 담긴 Repository
+공부한 내용을 기록하는 Repository
